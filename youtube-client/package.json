@@ -4,13 +4,14 @@
   "description": "Youtube Client App",
   "private": true,
   "main": "app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "https://github.com/uniorunr",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
