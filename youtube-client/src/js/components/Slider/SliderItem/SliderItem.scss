@@ -1,0 +1,68 @@
+.container {
+  width: 21%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+  background: #ffffff;
+  position: relative;
+  transition: top 0.1s, box-shadow 0.1s;
+  top: 2px;
+  font: 500 14px 'Roboto', sans-serif;
+  border: 3px solid black;
+  box-shadow: 4px 4px 0 black;
+  -webkit-box-shadow: 4px 4px 0 black;
+
+  .youtube-img-wrapper {
+    img {
+      width: 100%;
+    }
+  }
+
+  .container-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 10px;
+
+    .container-header {
+      margin: 0;
+
+      .container-header-title {
+        margin: 0 0 15px 0;
+
+        .container-header-title-link {
+          font-size: 1.8rem;
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .container-description {
+      p {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+
+    .container-footer-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 1.4rem;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.container:hover {
+  top: 0;
+  box-shadow: 6px 6px 0 black;
+  -webkit-box-shadow: 6px 6px 0 black;
+}
