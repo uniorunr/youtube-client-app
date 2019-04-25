@@ -3,7 +3,7 @@ import './Input.scss';
 const inputComponent = () => {
   const inputContainer = document.createElement('section');
   inputContainer.className = 'input-wrapper';
-  document.querySelector('body').appendChild(inputContainer);
+  document.querySelector('main').appendChild(inputContainer);
 
   const input = document.createElement('input');
   input.className = 'search-input';
