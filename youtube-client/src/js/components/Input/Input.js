@@ -10,6 +10,8 @@ const inputComponent = () => {
   input.setAttribute('placeholder', 'Search...');
   input.setAttribute('type', 'search');
   document.querySelector('.input-wrapper').appendChild(input);
+
+  return input;
 };
 
 export default inputComponent;

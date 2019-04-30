@@ -3,8 +3,15 @@ import sliderItemComponent from './SliderItem/SliderItem';
 import { createAndAppendElement } from '../../utilities/elementCreator';
 
 const sliderComponent = () => {
-  createAndAppendElement('section', 'slider', 'main');
-  sliderItemComponent('.slider');
+  const isSliderPresent = document.querySelector('.main .slider');
+
+  if (!isSliderPresent) {
+    createAndAppendElement('section', 'slider', 'main');
+    const slider = document.querySelector('.main .slider');
+    if (slider.children.length !== 4) {
+      sliderItemComponent('.slider');
+    }
+  }
 };
 
 export default sliderComponent;
