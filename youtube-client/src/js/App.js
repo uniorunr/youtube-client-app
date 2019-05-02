@@ -4,6 +4,7 @@ import inputComponent from './components/Input/Input';
 import sliderComponent from './components/Slider/Slider';
 import { createAndAppendElement } from './utilities/elementCreator';
 import { fetchVideoData, fetchVideoViewCount } from './utilities/requestHandler';
+import sliderListener from './utilities/sliderListener';
 
 import './App.scss';
 
@@ -15,7 +16,8 @@ const startApp = () => {
     sessionStorage.setItem('query', value);
     const videoData = await fetchVideoData(value, config);
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
-    sliderComponent(videoDataWithViewCount);
+    const slider = sliderComponent(videoDataWithViewCount);
+    sliderListener(slider);
   });
 };
 

@@ -12,6 +12,8 @@ const sliderComponent = (dataObj) => {
       sliderItemComponent('.slider', dataObj);
     }
   }
+
+  return document.querySelector('.main .slider');
 };
 
 export default sliderComponent;
