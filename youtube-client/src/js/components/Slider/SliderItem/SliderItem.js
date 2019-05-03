@@ -1,6 +1,19 @@
 import './SliderItem.scss';
 import template from './SliderItem.template';
 
+const preventClick = (linkElement) => {
+  linkElement.addEventListener('click', (e) => {
+    const root = document.documentElement;
+    const check = +getComputedStyle(root).getPropertyValue('--check').replace('px', '');
+    if (Math.abs(check) > 30) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    root.style.removeProperty('--check');
+  });
+};
+
 const sliderItemComponent = (parent, dataObj) => {
   const sliderContainer = document.querySelector(parent);
   const ids = Object.keys(dataObj);
@@ -26,6 +39,9 @@ const sliderItemComponent = (parent, dataObj) => {
     container.querySelector('.container-footer-date').textContent = dataObj[id].publishedAt;
     container.querySelector('.container-footer-views').classList.add(`views${index}`);
     container.querySelector('.container-footer-views').textContent = dataObj[id].viewCount;
+
+    const link = container.querySelector('.container-header-title');
+    preventClick(link);
 
     sliderContainer.appendChild(container);
   });

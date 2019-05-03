@@ -37,6 +37,7 @@ const sliderListener = (slider) => {
     const x = e.pageX - slider.offsetLeft;
     diff = startX - x;
     root.style.setProperty('--diff', `${diff}px`);
+    root.style.setProperty('--check', `${diff}px`);
   });
 };
 
