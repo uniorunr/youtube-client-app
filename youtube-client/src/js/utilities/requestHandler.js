@@ -1,5 +1,10 @@
-const fetchVideoData = async (query, config) => {
-  const response = await fetch(`${config.api_type.search}&key=${config.api_key}&maxResults=${config.max_results}&q=${query}`);
+const fetchVideoData = async (query, config, nextPageToken) => {
+  let response = null;
+  if (!nextPageToken) {
+    response = await fetch(`${config.api_type.search}&key=${config.api_key}&maxResults=${config.max_results}&q=${query}`);
+  } else {
+    response = await fetch(`${config.api_type.search}&key=${config.api_key}&maxResults=${config.max_results}&q=${query}&pageToken=${nextPageToken}`);
+  }
   const responseJSON = await response.json();
   const data = {};
 
@@ -24,10 +29,19 @@ const fetchVideoData = async (query, config) => {
       publishedAt: formatDate(item.snippet.publishedAt),
     };
   });
+
+  const pageToken = sessionStorage.getItem('pageToken');
+  if (pageToken === responseJSON.nextPageToken) {
+    return false;
+  }
+  sessionStorage.setItem('pageToken', responseJSON.nextPageToken);
+
   return data;
 };
 
 const fetchVideoViewCount = async (data, config) => {
+  if (!data) return false;
+
   const finalData = JSON.parse(JSON.stringify(data));
   const ids = Object.keys(data).join();
   const response = await fetch(`${config.api_type.videos}?key=${config.api_key}&id=${ids}&part=statistics`);
@@ -36,6 +50,8 @@ const fetchVideoViewCount = async (data, config) => {
   responseJSON.items.forEach((item) => {
     finalData[item.id].viewCount = item.statistics.viewCount;
   });
+
+  sessionStorage.setItem('data', JSON.stringify(finalData));
 
   return finalData;
 };

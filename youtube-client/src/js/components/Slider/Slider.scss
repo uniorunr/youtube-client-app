@@ -2,16 +2,18 @@
   --diff: 0px;
   --check: 0px;
   --chunk: 0;
+  --request: 1;
+  --items: 4;
 }
 
 .slider {
   display: flex;
   flex-grow: 1;
   margin: 30px auto;
-  width: calc(100vw * 3.75);
+  width: calc((100vw * 15 / var(--items)) * var(--request));
   overflow: hidden;
   padding: 10px 0;
   justify-content: flex-start;
-  transform: translateX(calc(((100vw - 144px)/ 4 + 36px) * -4 * var(--chunk) - var(--diff)));
+  transform: translateX(calc(((100vw - 144px) / 4 + 36px) * -4 * var(--chunk) - var(--diff)));
   transition: 0.5s ease-out;
 }

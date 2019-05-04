@@ -13,6 +13,7 @@ const startApp = () => {
   const input = inputComponent();
 
   input.addEventListener('search', async ({ target: { value } }) => {
+    sessionStorage.clear();
     sessionStorage.setItem('query', value);
     const videoData = await fetchVideoData(value, config);
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
