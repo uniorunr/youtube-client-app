@@ -4,14 +4,12 @@ import sliderComponent from '../components/Slider/Slider';
 
 const lazyLoading = async () => {
   const root = document.documentElement;
-  const request = +getComputedStyle(root).getPropertyValue('--request');
   const chunk = +sessionStorage.getItem('chunk');
   const items = +getComputedStyle(root).getPropertyValue('--items');
   const itemsViewed = chunk * items + items;
-  const itemsPerRequest = config.max_results;
   const pageToken = sessionStorage.getItem('pageToken');
   const query = sessionStorage.getItem('query');
-  const allItems = itemsPerRequest * request;
+  const allItems = document.querySelector('.slider').children.length;
 
   if (itemsViewed + items > allItems) {
     const videoData = await fetchVideoData(query, config, pageToken);
