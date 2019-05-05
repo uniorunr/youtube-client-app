@@ -54,6 +54,7 @@ const sliderListener = (slider) => {
         sessionStorage.setItem('chunk', `${chunk}`);
       }
       root.style.removeProperty('--diff');
+      diff = 0;
     });
 
     slider.addEventListener('mousemove', (e) => {
