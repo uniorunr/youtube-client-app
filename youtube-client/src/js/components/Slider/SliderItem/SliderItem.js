@@ -4,7 +4,9 @@ import template from './SliderItem.template';
 const preventClick = (linkElement) => {
   linkElement.addEventListener('click', (e) => {
     const root = document.documentElement;
-    const check = +getComputedStyle(root).getPropertyValue('--check').replace('px', '');
+    const check = +getComputedStyle(root)
+      .getPropertyValue('--check')
+      .replace('px', '');
     if (Math.abs(check) > 30) {
       e.preventDefault();
       e.stopPropagation();
