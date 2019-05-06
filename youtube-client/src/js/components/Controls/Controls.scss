@@ -1,0 +1,15 @@
+.controls-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+  .controls-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    margin: 0 0 40px;
+    height: fit-content;
+  }
+}
