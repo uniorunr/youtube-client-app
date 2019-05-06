@@ -6,11 +6,12 @@ import controlsComponent from './components/Controls/Controls';
 import createAndAppendElement from './utilities/elementCreator';
 import { fetchVideoData, fetchVideoViewCount } from './utilities/requestHandler';
 import sliderListener from './utilities/sliderListener';
+import controlsListener from './utilities/controlsListener';
 
 import './App.scss';
 
 const startApp = () => {
-  createAndAppendElement('main', 'main', 'body');
+  const mainSection = createAndAppendElement('main', 'main', 'body');
   const input = inputComponent();
 
   input.addEventListener('search', async ({ target: { value } }) => {
@@ -20,6 +21,9 @@ const startApp = () => {
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
     const slider = sliderComponent(videoDataWithViewCount);
     sliderListener(slider);
+
+    const controls = controlsComponent(mainSection);
+    controlsListener(controls);
   });
 };
 
