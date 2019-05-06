@@ -1,3 +1,22 @@
+const formatDate = (date) => {
+  const d = new Date(date);
+  let month = `${(d.getMonth() + 1)}`;
+  let day = `${d.getDate()}`;
+  const year = `${d.getFullYear()}`;
+
+  if (month.length < 2) month = `0${month}`;
+  if (day.length < 2) day = `0${day}`;
+
+  return [year, month, day].join('-');
+};
+
+const formatString = (description, maxLength) => {
+  if (description.length > maxLength) {
+    return `${description.split('').splice(0, 65).join('')}...`;
+  }
+  return description;
+};
+
 const fetchVideoData = async (query, config, nextPageToken) => {
   let response = null;
   if (!nextPageToken) {
@@ -8,21 +27,9 @@ const fetchVideoData = async (query, config, nextPageToken) => {
   const responseJSON = await response.json();
   const data = {};
 
-  const formatDate = (date) => {
-    const d = new Date(date);
-    let month = `${(d.getMonth() + 1)}`;
-    let day = `${d.getDate()}`;
-    const year = `${d.getFullYear()}`;
-
-    if (month.length < 2) month = `0${month}`;
-    if (day.length < 2) day = `0${day}`;
-
-    return [year, month, day].join('-');
-  };
-
   responseJSON.items.forEach((item) => {
     data[item.id.videoId] = {
-      title: item.snippet.title,
+      title: formatString(item.snippet.title, 60),
       channelTitle: item.snippet.channelTitle,
       description: item.snippet.description,
       thumbnailUrl: item.snippet.thumbnails.medium.url,
