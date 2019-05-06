@@ -4,7 +4,7 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
-  top: 2px;
+  top: 0;
   height: 35px;
   padding: 5px 10px;
   transition: top 0.1s, box-shadow 0.1s;
@@ -22,9 +22,21 @@
   margin-right: 25px;
 }
 
+.prev-page-button:active {
+  top: 2px;
+  box-shadow: 2px 2px 0 black;
+  -webkit-box-shadow: 2px 2px 0 black;
+}
+
 .next-page-button {
   flex-grow: 1;
   margin-left: 25px;
+}
+
+.next-page-button:active {
+  top: 2px;
+  box-shadow: 2px 2px 0 black;
+  -webkit-box-shadow: 2px 2px 0 black;
 }
 
 .active-button {
