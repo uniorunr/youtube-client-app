@@ -2,7 +2,8 @@ import '@babel/polyfill';
 import config from './config';
 import inputComponent from './components/Input/Input';
 import sliderComponent from './components/Slider/Slider';
-import { createAndAppendElement } from './utilities/elementCreator';
+import controlsComponent from './components/Controls/Controls';
+import createAndAppendElement from './utilities/elementCreator';
 import { fetchVideoData, fetchVideoViewCount } from './utilities/requestHandler';
 import sliderListener from './utilities/sliderListener';
 
