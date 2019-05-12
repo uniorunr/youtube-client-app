@@ -20,9 +20,8 @@ const startApp = () => {
     const videoData = await fetchVideoData(value, config);
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
     const slider = sliderComponent(videoDataWithViewCount);
-    sliderListener(slider);
-
     const controls = controlsComponent(mainSection);
+    sliderListener(slider);
     controlsListener(controls);
   });
 };

@@ -11,20 +11,19 @@ const controlsComponent = (parent) => {
     container.className = 'controls-wrapper';
     containerWrapper.appendChild(container);
 
-    const prevPageContent = '<i class="fas fa-caret-left"></i><span class="prev-page">1</span>';
-    const prevPage = controlButton('prev-page-button button', prevPageContent);
+    const prevPageContent = '<i class="fas fa-caret-left"></i><span class="prev-page">0</span>';
+    const prevPage = controlButton('prev-page-button button disabled', prevPageContent);
     container.appendChild(prevPage);
 
     const currPage = controlButton('curr-page-button button');
     container.appendChild(currPage);
 
-    const nextPageContent = '<span class="next-page">3</span><i class="fas fa-caret-right"></i>';
+    const nextPageContent = '<span class="next-page">2</span><i class="fas fa-caret-right"></i>';
     const nextPage = controlButton('next-page-button button', nextPageContent);
     container.appendChild(nextPage);
 
     parent.appendChild(containerWrapper);
 
-    console.log(containerWrapper);
     return containerWrapper;
   }
 

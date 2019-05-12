@@ -28,6 +28,10 @@
   -webkit-box-shadow: 2px 2px 0 black;
 }
 
+.prev-page-button.disabled {
+  visibility: hidden;
+}
+
 .next-page-button {
   flex-grow: 1;
   margin-left: 25px;

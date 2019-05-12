@@ -7,7 +7,7 @@ const controlButton = (className, innerHTML) => {
   if (innerHTML) {
     button.innerHTML = `${innerHTML}`;
   } else {
-    button.textContent = '2';
+    button.textContent = '1';
   }
   return button;
 };

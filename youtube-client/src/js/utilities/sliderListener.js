@@ -3,6 +3,9 @@ import lazyLoading from './lazyLoading';
 const sliderListener = (slider) => {
   if (!slider.dataset.listener) {
     const root = document.documentElement;
+    const prevPage = document.querySelector('.prev-page-button');
+    const currPage = document.querySelector('.curr-page-button');
+    const nextPage = document.querySelector('.next-page-button');
     let isDown = false;
     let startX = null;
     let diff = null;
@@ -27,10 +30,20 @@ const sliderListener = (slider) => {
         chunk += 1;
         root.style.setProperty('--chunk', `${chunk}`);
         sessionStorage.setItem('chunk', `${chunk}`);
+        prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
+        currPage.textContent = `${chunk + 1}`;
+        nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
+        prevPage.classList.remove('disabled');
       } else if (Math.abs(diff) > 30 && chunk !== 0) {
         chunk -= 1;
         root.style.setProperty('--chunk', `${chunk}`);
         sessionStorage.setItem('chunk', `${chunk}`);
+        prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
+        currPage.textContent = `${chunk + 1}`;
+        nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
+        if (chunk === 0) {
+          prevPage.classList.add('disabled');
+        }
       }
       root.style.removeProperty('--diff');
       diff = 0;
