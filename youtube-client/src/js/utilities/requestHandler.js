@@ -10,11 +10,14 @@ const formatDate = (date) => {
   return [year, month, day].join('-');
 };
 
-const formatString = (description, maxLength) => {
-  if (description.length > maxLength) {
-    return `${description.split('').splice(0, 65).join('')}...`;
+const encodeStringAndSetLength = (initText, maxLength) => {
+  let text = initText;
+  if (text.length > maxLength) {
+    text = `${text.split('').splice(0, 65).join('')}...`;
   }
-  return description;
+  const textArea = document.createElement('textarea');
+  textArea.innerHTML = text;
+  return textArea.value;
 };
 
 const fetchVideoData = async (query, config, nextPageToken) => {
@@ -29,7 +32,7 @@ const fetchVideoData = async (query, config, nextPageToken) => {
 
   responseJSON.items.forEach((item) => {
     data[item.id.videoId] = {
-      title: formatString(item.snippet.title, 60),
+      title: encodeStringAndSetLength(item.snippet.title, 60),
       channelTitle: item.snippet.channelTitle,
       description: item.snippet.description,
       thumbnailUrl: item.snippet.thumbnails.medium.url,
