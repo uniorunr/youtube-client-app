@@ -24,6 +24,14 @@ const controlsListener = (controlsWrapper) => {
       }
     });
     prevPage.addEventListener('click', lazyLoading);
+    prevPage.addEventListener('mousedown', () => {
+      const chunk = +sessionStorage.getItem('chunk');
+      prevPage.classList.add('tooltip');
+      prevPage.setAttribute('data-page', `${chunk}`);
+    });
+    prevPage.addEventListener('mouseup', () => {
+      prevPage.classList.remove('tooltip');
+    });
 
     nextPage.addEventListener('click', () => {
       let chunk = +sessionStorage.getItem('chunk');
@@ -36,6 +44,14 @@ const controlsListener = (controlsWrapper) => {
       prevPage.classList.remove('disabled');
     });
     nextPage.addEventListener('click', lazyLoading);
+    nextPage.addEventListener('mousedown', () => {
+      const chunk = +sessionStorage.getItem('chunk');
+      nextPage.classList.add('tooltip');
+      nextPage.setAttribute('data-page', `${chunk + 2}`);
+    });
+    nextPage.addEventListener('mouseup', () => {
+      nextPage.classList.remove('tooltip');
+    });
 
     controlsWrapper.setAttribute('data-listener', 'true');
   }

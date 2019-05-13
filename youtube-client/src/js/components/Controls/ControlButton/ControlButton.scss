@@ -17,6 +17,15 @@
   -webkit-box-shadow: 4px 4px 0 black;
 }
 
+.button.tooltip:after {
+  content: attr(data-page);
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 40px;
+  background-color: #ffffff;
+  border: 3px solid black;
+}
+
 .prev-page-button {
   flex-grow: 1;
   margin-right: 25px;
