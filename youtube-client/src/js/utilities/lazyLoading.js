@@ -11,7 +11,7 @@ const lazyLoading = async () => {
   const query = sessionStorage.getItem('query');
   const allItems = document.querySelector('.slider').children.length;
 
-  if (itemsViewed + items > allItems) {
+  if (itemsViewed + 2 * items > allItems) {
     const videoData = await fetchVideoData(query, config, pageToken);
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
 
