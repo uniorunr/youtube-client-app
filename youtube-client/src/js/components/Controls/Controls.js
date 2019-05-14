@@ -29,6 +29,13 @@ const controlsComponent = (parent) => {
 
     return containerWrapper;
   }
+  const prevPage = controls.querySelector('.prev-page');
+  const currPage = controls.querySelector('.curr-page-button.button');
+  const nextPage = controls.querySelector('.next-page');
+  prevPage.textContent = '0';
+  prevPage.parentElement.classList.add('disabled');
+  currPage.textContent = '1';
+  nextPage.textContent = '2';
 
   return null;
 };
