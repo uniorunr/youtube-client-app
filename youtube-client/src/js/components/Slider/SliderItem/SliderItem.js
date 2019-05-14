@@ -19,6 +19,7 @@ const preventClick = (linkElement) => {
 const sliderItemComponent = (parent, dataObj, allItems) => {
   const sliderContainer = document.querySelector(parent);
   const ids = Object.keys(dataObj);
+  const fragment = document.createDocumentFragment();
 
   ids.forEach((id, itemIndex) => {
     let actualIndex = itemIndex;
@@ -31,7 +32,8 @@ const sliderItemComponent = (parent, dataObj, allItems) => {
     container.querySelector('.youtube-img').classList.add(`img${actualIndex}`);
     container.querySelector('.youtube-img')
       .setAttribute('src', dataObj[id].thumbnailUrl);
-    container.querySelector('.container-header-title-link').classList.add(`title-link${actualIndex}`);
+    container.querySelector('.container-header-title-link')
+      .classList.add(`title-link${actualIndex}`);
     container.querySelector('.container-header-title-link')
       .setAttribute('href', `https://www.youtube.com/watch?v=${id}`);
     container.querySelector('.container-header-title-link').textContent = dataObj[id].title;
@@ -49,8 +51,9 @@ const sliderItemComponent = (parent, dataObj, allItems) => {
     const link = container.querySelector('.container-header-title');
     preventClick(link);
 
-    sliderContainer.appendChild(container);
+    fragment.appendChild(container);
   });
+  sliderContainer.appendChild(fragment);
 };
 
 export default sliderItemComponent;
