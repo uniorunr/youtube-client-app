@@ -10,19 +10,23 @@ const sliderListener = (slider) => {
     let startX = null;
     let diff = null;
 
-    slider.addEventListener('mousedown', ({ pageX }) => {
+    const activate = ({ pageX, changedTouches }) => {
       isDown = true;
       slider.classList.add('active');
-      startX = pageX - slider.offsetLeft;
-    });
+      if (pageX) {
+        startX = pageX - slider.offsetLeft;
+      } else {
+        startX = changedTouches[0].pageX - slider.offsetLeft;
+      }
+    };
 
-    slider.addEventListener('mouseleave', () => {
+    const leave = () => {
       isDown = false;
       slider.classList.remove('active');
       root.style.removeProperty('--diff');
-    });
+    };
 
-    slider.addEventListener('mouseup', () => {
+    const moveSlider = () => {
       let chunk = +sessionStorage.getItem('chunk');
       isDown = false;
       slider.classList.remove('active');
@@ -47,18 +51,37 @@ const sliderListener = (slider) => {
       }
       root.style.removeProperty('--diff');
       diff = 0;
-    });
+    };
 
-    slider.addEventListener('mousemove', (e) => {
+    const drag = (e) => {
       if (!isDown) return;
       e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      diff = startX - x;
-      root.style.setProperty('--diff', `${diff}px`);
-      root.style.setProperty('--check', `${diff}px`);
-    });
+      if (e.pageX) {
+        const x = e.pageX - slider.offsetLeft;
+        diff = startX - x;
+        root.style.setProperty('--diff', `${diff}px`);
+        root.style.setProperty('--check', `${diff}px`);
+      } else {
+        const x = e.changedTouches[0].pageX - slider.offsetLeft;
+        diff = startX - x;
+        root.style.setProperty('--diff', `${diff}px`);
+        root.style.setProperty('--check', `${diff}px`);
+      }
+    };
+
+    slider.addEventListener('mousedown', activate);
+    slider.addEventListener('touchstart', activate);
+
+    slider.addEventListener('mouseleave', leave);
+
+    slider.addEventListener('mousemove', drag);
+    slider.addEventListener('touchmove', drag);
+
+    slider.addEventListener('mouseup', moveSlider);
+    slider.addEventListener('touchend', moveSlider);
 
     slider.addEventListener('mouseup', lazyLoading);
+    slider.addEventListener('touchend', lazyLoading);
     slider.setAttribute('data-listener', true);
   }
 };
