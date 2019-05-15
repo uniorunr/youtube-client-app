@@ -1,5 +1,5 @@
 .container {
-  width: calc((100vw - 144px) / 4);;
+  width: calc((100vw - 36px * var(--items)) / var(--items));;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -75,4 +75,101 @@
   top: 0;
   box-shadow: 6px 6px 0 black;
   -webkit-box-shadow: 6px 6px 0 black;
+}
+
+@media only screen and (max-width : 824px) and (orientation: landscape) {
+  .container {
+    .container-content {
+      .container-header {
+        .container-header-title {
+          margin: 5px 0 0;
+
+          .container-header-title-link {
+            font-size: 1.2rem;
+            display: inline-block;
+            line-height: 1.75rem;
+          }
+        }
+
+        .container-header-channel {
+          font-size: 1rem;
+        }
+      }
+
+      .container-description {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .container-footer {
+        font-size: 1.1rem;
+
+        .container-footer-wrapper {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .youtube-img-wrapper img {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .container .container-content .container-description p {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  .container  {
+    .youtube-img-wrapper img {
+      width: 45%;
+    }
+
+    .container-content {
+      .container-header {
+        .container-header-title {
+          margin: 5px 0 0;
+
+          .container-header-title-link {
+            display: inline-block;
+            line-height: 1.75rem;
+          }
+        }
+      }
+
+      .container-description p {
+        overflow: hidden;
+        max-height: 55px;
+      }
+    }
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .container  {
+    .container-content {
+      .container-header {
+        .container-header-title {
+          margin: 5px 0;
+
+          .container-header-title-link {
+            display: inline-block;
+            line-height: 1.75rem;
+          }
+        }
+      }
+    }
+  }
 }

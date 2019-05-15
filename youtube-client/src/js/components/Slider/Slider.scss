@@ -8,7 +8,6 @@
 
 .slider {
   display: flex;
-  flex-grow: 1;
   margin: 30px auto;
   width: calc((100vw * 15 / var(--items)) * var(--request));
   overflow: hidden;
@@ -16,4 +15,46 @@
   justify-content: flex-start;
   transform: translateX(calc(((100vw - 144px) / 4 + 36px) * -4 * var(--chunk) - var(--diff)));
   transition: 0.35s ease-out;
+}
+
+@media only screen and (max-width : 1024px) {
+  :root {
+    --items: 3;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  :root {
+    --items: 2;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  :root {
+    --items: 1;
+  }
+}
+
+@media only screen and (max-width : 824px) and (orientation: landscape) {
+  .slider {
+    margin: 10px auto;
+
+    .youtube-img-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: gray;
+    }
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  .slider {
+    margin: 5px auto;
+    padding: 5px 0;
+  }
 }

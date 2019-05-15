@@ -8,8 +8,36 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30%;
+    min-width: 30%;
     margin: 0 0 40px;
     height: fit-content;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .controls-section .controls-wrapper {
+    margin: 0 0 20px;
+  }
+}
+
+@media only screen and (max-width : 824px) and (orientation: landscape) {
+  .controls-section .controls-wrapper {
+    margin: 0 0 10px;
+  }
+
+  .controls-section .button {
+    height: 32px;
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  .controls-section .button {
+    height: 30px;
+    font-size: 1.2rem;
   }
 }
