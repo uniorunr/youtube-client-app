@@ -11,19 +11,22 @@ import controlsListener from './utilities/controlsListener';
 import './App.scss';
 
 const startApp = () => {
+  sessionStorage.clear();
   const mainSection = createAndAppendElement('main', 'main', 'body');
   const input = inputComponent();
 
   input.addEventListener('search', async ({ target: { value } }) => {
-    sessionStorage.clear();
-    sessionStorage.setItem('query', value);
-    sessionStorage.setItem('chunk', '0');
-    const videoData = await fetchVideoData(value, config);
-    const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
-    const slider = sliderComponent(videoDataWithViewCount);
-    const controls = controlsComponent(mainSection);
-    sliderListener(slider);
-    controlsListener(controls);
+    if (value) {
+      sessionStorage.clear();
+      sessionStorage.setItem('query', value);
+      sessionStorage.setItem('chunk', '0');
+      const videoData = await fetchVideoData(value, config);
+      const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
+      const slider = sliderComponent(videoDataWithViewCount);
+      const controls = controlsComponent(mainSection);
+      sliderListener(slider);
+      controlsListener(controls);
+    }
   });
 };
 
