@@ -9,7 +9,7 @@
   transition: top 0.1s, box-shadow 0.1s;
   top: 2px;
   font: 500 14px 'Roboto', sans-serif;
-  border: 3px solid black;
+  border: 2px solid black;
   box-shadow: 4px 4px 0 black;
   -webkit-box-shadow: 4px 4px 0 black;
   cursor: grab;
@@ -17,6 +17,7 @@
   .youtube-img-wrapper {
     img {
       width: 100%;
+      border-bottom: 2px solid black;
     }
   }
 
