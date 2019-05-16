@@ -32,6 +32,9 @@ const controlsListener = (controlsWrapper) => {
     prevPage.addEventListener('mouseup', () => {
       prevPage.classList.remove('tooltip');
     });
+    prevPage.addEventListener('mouseleave', () => {
+      prevPage.classList.remove('tooltip');
+    });
 
     nextPage.addEventListener('click', () => {
       let chunk = +sessionStorage.getItem('chunk');
@@ -50,6 +53,9 @@ const controlsListener = (controlsWrapper) => {
       nextPage.setAttribute('data-page', `${chunk + 2}`);
     });
     nextPage.addEventListener('mouseup', () => {
+      nextPage.classList.remove('tooltip');
+    });
+    nextPage.addEventListener('mouseleave', () => {
       nextPage.classList.remove('tooltip');
     });
 
