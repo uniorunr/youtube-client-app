@@ -17,6 +17,7 @@ const startApp = () => {
   input.addEventListener('search', async ({ target: { value } }) => {
     sessionStorage.clear();
     sessionStorage.setItem('query', value);
+    sessionStorage.setItem('chunk', '0');
     const videoData = await fetchVideoData(value, config);
     const videoDataWithViewCount = await fetchVideoViewCount(videoData, config);
     const slider = sliderComponent(videoDataWithViewCount);

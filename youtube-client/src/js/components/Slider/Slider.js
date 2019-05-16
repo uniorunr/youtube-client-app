@@ -24,7 +24,6 @@ const sliderComponent = (dataObj, flag, allItems) => {
   const children = document.querySelector('.main .slider').children.length;
   root.style.setProperty('--request', `${children / config.max_results}`);
   const items = +getComputedStyle(root).getPropertyValue('--items');
-  sessionStorage.setItem('chunk', '0');
   sessionStorage.setItem('items', `${items}`);
 
   return document.querySelector('.main .slider');
