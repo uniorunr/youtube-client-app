@@ -1,5 +1,5 @@
 .container {
-  width: calc((100vw - 36px * var(--items)) / var(--items));;
+  width: calc((100vw - 34px * var(--items)) / var(--items));;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -48,13 +48,14 @@
     }
 
     .container-description {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
 
       p {
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;
         white-space: -o-pre-wrap;
         word-wrap: break-word;
+        line-height: 1.6rem;
       }
     }
 
@@ -62,7 +63,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
 
       span {
@@ -76,6 +77,7 @@
   top: 0;
   box-shadow: 6px 6px 0 black;
   -webkit-box-shadow: 6px 6px 0 black;
+  filter: none;
 }
 
 @media only screen and (max-width : 824px) and (orientation: landscape) {
