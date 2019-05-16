@@ -11,6 +11,7 @@ const controlsListener = (controlsWrapper) => {
 
     prevPage.addEventListener('click', () => {
       let chunk = +sessionStorage.getItem('chunk');
+      const items = +sessionStorage.getItem('items');
       if (chunk !== 0) {
         chunk -= 1;
         root.style.setProperty('--chunk', `${chunk}`);
@@ -18,6 +19,7 @@ const controlsListener = (controlsWrapper) => {
         prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
         currPage.textContent = `${chunk + 1}`;
         nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
+        sessionStorage.setItem('leftItem', `${chunk * items}`);
         if (chunk === 0) {
           prevPage.classList.add('disabled');
         }
@@ -38,6 +40,7 @@ const controlsListener = (controlsWrapper) => {
 
     nextPage.addEventListener('click', () => {
       let chunk = +sessionStorage.getItem('chunk');
+      const items = +sessionStorage.getItem('items');
       chunk += 1;
       root.style.setProperty('--chunk', `${chunk}`);
       sessionStorage.setItem('chunk', `${chunk}`);
@@ -45,6 +48,7 @@ const controlsListener = (controlsWrapper) => {
       currPage.textContent = `${chunk + 1}`;
       nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
       prevPage.classList.remove('disabled');
+      sessionStorage.setItem('leftItem', `${chunk * items}`);
     });
     nextPage.addEventListener('click', lazyLoading);
     nextPage.addEventListener('mousedown', () => {

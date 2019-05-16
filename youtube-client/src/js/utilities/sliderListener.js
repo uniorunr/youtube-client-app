@@ -28,6 +28,7 @@ const sliderListener = (slider) => {
 
     const moveSlider = () => {
       let chunk = +sessionStorage.getItem('chunk');
+      const items = +sessionStorage.getItem('items');
       isDown = false;
       slider.classList.remove('active');
       if (diff > 30) {
@@ -38,6 +39,7 @@ const sliderListener = (slider) => {
         currPage.textContent = `${chunk + 1}`;
         nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
         prevPage.classList.remove('disabled');
+        sessionStorage.setItem('leftItem', `${chunk * items}`);
       } else if (Math.abs(diff) > 30 && chunk !== 0) {
         chunk -= 1;
         root.style.setProperty('--chunk', `${chunk}`);
@@ -45,6 +47,7 @@ const sliderListener = (slider) => {
         prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
         currPage.textContent = `${chunk + 1}`;
         nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
+        sessionStorage.setItem('leftItem', `${chunk * items}`);
         if (chunk === 0) {
           prevPage.classList.add('disabled');
         }
@@ -69,6 +72,21 @@ const sliderListener = (slider) => {
       }
     };
 
+    const resize = () => {
+      const initItems = +sessionStorage.getItem('items');
+      const currItems = +getComputedStyle(root).getPropertyValue('--items');
+      const leftItem = +sessionStorage.getItem('leftItem');
+      const currChunk = Math.floor(leftItem / currItems);
+      if (initItems !== currItems) {
+        root.style.setProperty('--chunk', `${currChunk}`);
+        sessionStorage.setItem('chunk', `${currChunk}`);
+        sessionStorage.setItem('items', `${currItems}`);
+        prevPage.querySelector('span.prev-page').textContent = `${currChunk}`;
+        currPage.textContent = `${currChunk + 1}`;
+        nextPage.querySelector('span.next-page').textContent = `${currChunk + 2}`;
+      }
+    };
+
     slider.addEventListener('mousedown', activate);
     slider.addEventListener('touchstart', activate);
 
@@ -82,6 +100,7 @@ const sliderListener = (slider) => {
 
     slider.addEventListener('mouseup', lazyLoading);
     slider.addEventListener('touchend', lazyLoading);
+    window.addEventListener('resize', resize);
     slider.setAttribute('data-listener', true);
   }
 };

@@ -15,7 +15,6 @@ const sliderComponent = (dataObj, flag, allItems) => {
     sliderChilds.forEach((child) => {
       child.remove();
     });
-    sessionStorage.setItem('chunk', '0');
     root.style.setProperty('--chunk', '0');
     sliderItemComponent('.slider', dataObj);
   } else {
@@ -24,6 +23,9 @@ const sliderComponent = (dataObj, flag, allItems) => {
 
   const children = document.querySelector('.main .slider').children.length;
   root.style.setProperty('--request', `${children / config.max_results}`);
+  const items = +getComputedStyle(root).getPropertyValue('--items');
+  sessionStorage.setItem('chunk', '0');
+  sessionStorage.setItem('items', `${items}`);
 
   return document.querySelector('.main .slider');
 };
