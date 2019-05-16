@@ -5,6 +5,7 @@
   "private": true,
   "main": "app.js",
   "scripts": {
+    "test": "jest",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --open"
   },
@@ -13,7 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",
-    "babel-core": "^6.26.3",
+    "@babel/preset-env": "^7.4.4",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -24,6 +26,7 @@
     "eslint-plugin-import": "^2.14.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
+    "jsdom": "^15.1.0",
     "lite-server": "^2.4.0",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
