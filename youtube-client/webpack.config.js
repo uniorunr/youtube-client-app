@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/js/App.js'],
+  entry: ['@babel/polyfill', './src/App.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.bundle.js',
@@ -24,9 +24,9 @@ module.exports = {
         {
           loader: 'sass-loader',
           options: {
-            data: '@import "src/js/theme.scss";',
+            data: '@import "src/theme.scss";',
             includePaths: [
-              path.resolve(__dirname, 'src/js/App'),
+              path.resolve(__dirname, 'src/App'),
             ],
           },
         },
