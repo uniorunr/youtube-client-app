@@ -21,7 +21,15 @@ module.exports = {
       use: [
         'style-loader',
         'css-loader',
-        'sass-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            data: '@import "src/js/theme.scss";',
+            includePaths: [
+              path.resolve(__dirname, 'src/js/App'),
+            ],
+          },
+        },
       ],
     }],
   },

@@ -4,20 +4,20 @@
   flex-direction: column;
   flex-shrink: 0;
   margin: 0 15px;
-  background: #ffffff;
+  background: $theme-item-background;
   position: relative;
   transition: top 0.1s, box-shadow 0.1s;
   top: 2px;
   font: 500 14px 'Roboto', sans-serif;
-  border: 2px solid black;
-  box-shadow: 4px 4px 0 black;
-  -webkit-box-shadow: 4px 4px 0 black;
+  border: 2px solid $theme-shadow-color;
+  box-shadow: 4px 4px 0 $theme-shadow-color;
+  -webkit-box-shadow: 4px 4px 0 $theme-shadow-color;
   cursor: grab;
 
   .youtube-img-wrapper {
     img {
       width: 100%;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $theme-shadow-color;
     }
   }
 
@@ -27,6 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 0 10px;
+    color: $theme-font-color;
 
     .container-header {
       margin: 0;
@@ -37,7 +38,7 @@
 
         .container-header-title-link {
           font-size: 1.6rem;
-          color: black;
+          color: $theme-font-color;
           text-decoration: none;
         }
       }
@@ -75,8 +76,8 @@
 
 .container:hover {
   top: 0;
-  box-shadow: 6px 6px 0 black;
-  -webkit-box-shadow: 6px 6px 0 black;
+  box-shadow: 6px 6px 0 $theme-shadow-color;
+  -webkit-box-shadow: 6px 6px 0 $theme-shadow-color;
   filter: none;
 }
 

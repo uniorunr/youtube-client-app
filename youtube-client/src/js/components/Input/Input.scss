@@ -13,21 +13,22 @@
     outline: none;
     font: 500 14px 'Roboto', sans-serif;
     padding: 10px 30px;
-    background-color: #ffffff;
-    border: 2px solid black;
-    box-shadow: 2px 2px 0 black;
-    -webkit-box-shadow: 2px 2px 0 black;
+    color: $theme-font-color;
+    background-color: $theme-item-background;
+    border: 2px solid $theme-shadow-color;
+    box-shadow: 2px 2px 0 $theme-shadow-color;
+    -webkit-box-shadow: 2px 2px 0 $theme-shadow-color;
   }
 
   .search-input:hover {
     top: 0;
-    box-shadow: 4px 4px 0 black;
-    -webkit-box-shadow: 4px 4px 0 black;
+    box-shadow: 4px 4px 0 $theme-shadow-color;
+    -webkit-box-shadow: 4px 4px 0 $theme-shadow-color;
   }
 
   .search-input::placeholder {
     font: 500 14px 'Roboto', sans-serif;
-    color: black;
+    color: $theme-font-color;
   }
 }
 
