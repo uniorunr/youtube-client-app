@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sliderItemComponent should be rendered correctly 1`] = `
+"<article class=\\"container container0\\">
+<div class=\\"youtube-img-wrapper\\">
+  <img class=\\"youtube-img img0\\" src=\\"thumbnailUrl1\\" alt=\\"Youtube preview image\\">
+</div>
+<div class=\\"container-content\\">
+  <header class=\\"container-header\\">
+    <h2 class=\\"container-header-title\\">
+      <a class=\\"container-header-title-link title-link0\\" href=\\"https://www.youtube.com/watch?v=testVideoId1\\" target=\\"_blank\\">title1</a>
+    </h2>
+    <span class=\\"container-header-channel channel0\\">channelTitle1</span>
+  </header>
+  <section class=\\"container-description description0\\">
+    <p>description1</p>
+  </section>
+  <footer class=\\"container-footer\\">
+    <div class=\\"container-footer-wrapper\\">
+      <div class=\\"container-footer-reg\\">
+        <i class=\\"far fa-calendar-alt\\"></i>
+        <span class=\\"container-footer-date date0\\">publishedAt1</span>
+      </div>
+      <div class=\\"container-footer-view-sec\\">
+        <i class=\\"far fa-eye\\"></i>
+        <span class=\\"container-footer-views views0\\">viewCount1</span>
+      </div>
+    </div>
+   </footer>
+</div>
+</article><article class=\\"container container1\\">
+<div class=\\"youtube-img-wrapper\\">
+  <img class=\\"youtube-img img1\\" src=\\"thumbnailUrl2\\" alt=\\"Youtube preview image\\">
+</div>
+<div class=\\"container-content\\">
+  <header class=\\"container-header\\">
+    <h2 class=\\"container-header-title\\">
+      <a class=\\"container-header-title-link title-link1\\" href=\\"https://www.youtube.com/watch?v=testVideoId2\\" target=\\"_blank\\">title2</a>
+    </h2>
+    <span class=\\"container-header-channel channel1\\">channelTitle2</span>
+  </header>
+  <section class=\\"container-description description1\\">
+    <p>description2</p>
+  </section>
+  <footer class=\\"container-footer\\">
+    <div class=\\"container-footer-wrapper\\">
+      <div class=\\"container-footer-reg\\">
+        <i class=\\"far fa-calendar-alt\\"></i>
+        <span class=\\"container-footer-date date1\\">publishedAt2</span>
+      </div>
+      <div class=\\"container-footer-view-sec\\">
+        <i class=\\"far fa-eye\\"></i>
+        <span class=\\"container-footer-views views1\\">viewCount2</span>
+      </div>
+    </div>
+   </footer>
+</div>
+</article>"
+`;
