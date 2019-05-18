@@ -1,6 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sliderItemComponent should be rendered correctly 1`] = `
+exports[`sliderItemComponent should be rendered correctly if three arguments passed 1`] = `
+"<article class=\\"container container5\\">
+<div class=\\"youtube-img-wrapper\\">
+  <img class=\\"youtube-img img5\\" src=\\"thumbnailUrl1\\" alt=\\"Youtube preview image\\">
+</div>
+<div class=\\"container-content\\">
+  <header class=\\"container-header\\">
+    <h2 class=\\"container-header-title\\">
+      <a class=\\"container-header-title-link title-link5\\" href=\\"https://www.youtube.com/watch?v=testVideoId1\\" target=\\"_blank\\">title1</a>
+    </h2>
+    <span class=\\"container-header-channel channel5\\">channelTitle1</span>
+  </header>
+  <section class=\\"container-description description5\\">
+    <p>description1</p>
+  </section>
+  <footer class=\\"container-footer\\">
+    <div class=\\"container-footer-wrapper\\">
+      <div class=\\"container-footer-reg\\">
+        <i class=\\"far fa-calendar-alt\\"></i>
+        <span class=\\"container-footer-date date5\\">publishedAt1</span>
+      </div>
+      <div class=\\"container-footer-view-sec\\">
+        <i class=\\"far fa-eye\\"></i>
+        <span class=\\"container-footer-views views5\\">viewCount1</span>
+      </div>
+    </div>
+   </footer>
+</div>
+</article><article class=\\"container container6\\">
+<div class=\\"youtube-img-wrapper\\">
+  <img class=\\"youtube-img img6\\" src=\\"thumbnailUrl2\\" alt=\\"Youtube preview image\\">
+</div>
+<div class=\\"container-content\\">
+  <header class=\\"container-header\\">
+    <h2 class=\\"container-header-title\\">
+      <a class=\\"container-header-title-link title-link6\\" href=\\"https://www.youtube.com/watch?v=testVideoId2\\" target=\\"_blank\\">title2</a>
+    </h2>
+    <span class=\\"container-header-channel channel6\\">channelTitle2</span>
+  </header>
+  <section class=\\"container-description description6\\">
+    <p>description2</p>
+  </section>
+  <footer class=\\"container-footer\\">
+    <div class=\\"container-footer-wrapper\\">
+      <div class=\\"container-footer-reg\\">
+        <i class=\\"far fa-calendar-alt\\"></i>
+        <span class=\\"container-footer-date date6\\">publishedAt2</span>
+      </div>
+      <div class=\\"container-footer-view-sec\\">
+        <i class=\\"far fa-eye\\"></i>
+        <span class=\\"container-footer-views views6\\">viewCount2</span>
+      </div>
+    </div>
+   </footer>
+</div>
+</article>"
+`;
+
+exports[`sliderItemComponent should be rendered correctly if two arguments passed 1`] = `
 "<article class=\\"container container0\\">
 <div class=\\"youtube-img-wrapper\\">
   <img class=\\"youtube-img img0\\" src=\\"thumbnailUrl1\\" alt=\\"Youtube preview image\\">
