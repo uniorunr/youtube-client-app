@@ -16,6 +16,7 @@ const startApp = () => {
   const input = inputComponent();
 
   input.addEventListener('search', async ({ target: { value } }) => {
+    input.blur();
     if (value) {
       sessionStorage.clear();
       sessionStorage.setItem('query', value);
