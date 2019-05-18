@@ -6,6 +6,7 @@
   margin: 0 15px;
   background: $theme-item-background;
   position: relative;
+  z-index: 1;
   transition: top 0.1s, box-shadow 0.1s;
   top: 2px;
   font: 500 14px 'Roboto', sans-serif;
