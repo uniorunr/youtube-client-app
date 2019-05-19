@@ -4,7 +4,7 @@
   justify-content: center;
   width: 100%;
 
-  .controls-wrapper {
+  .controls {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,13 +15,13 @@
 }
 
 @media only screen and (max-width : 480px) {
-  .controls-section .controls-wrapper {
+  .controls-section .controls {
     margin: 0 0 20px;
   }
 }
 
 @media only screen and (max-width : 824px) and (orientation: landscape) {
-  .controls-section .controls-wrapper {
+  .controls-section .controls {
     margin: 0 0 10px;
   }
 

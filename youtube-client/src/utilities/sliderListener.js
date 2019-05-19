@@ -3,9 +3,9 @@ import lazyLoading from './lazyLoading';
 const sliderListener = (slider) => {
   if (!slider.dataset.listener) {
     const root = document.documentElement;
-    const prevPage = document.querySelector('.prev-page-button');
-    const currPage = document.querySelector('.curr-page-button');
-    const nextPage = document.querySelector('.next-page-button');
+    const prevPage = document.querySelector('.controls__button_prev');
+    const currPage = document.querySelector('.controls__button_curr');
+    const nextPage = document.querySelector('.controls__button_next');
     let isDown = false;
     let startX = null;
     let diff = null;
@@ -35,21 +35,21 @@ const sliderListener = (slider) => {
         chunk += 1;
         root.style.setProperty('--chunk', `${chunk}`);
         sessionStorage.setItem('chunk', `${chunk}`);
-        prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
+        prevPage.querySelector('.controls__prev-control-content').textContent = `${chunk}`;
         currPage.textContent = `${chunk + 1}`;
-        nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
-        prevPage.classList.remove('disabled');
+        nextPage.querySelector('.controls__next-control-content').textContent = `${chunk + 2}`;
+        prevPage.classList.remove('controls__button_state_disabled');
         sessionStorage.setItem('leftItem', `${chunk * items}`);
       } else if (Math.abs(diff) > 30 && chunk !== 0) {
         chunk -= 1;
         root.style.setProperty('--chunk', `${chunk}`);
         sessionStorage.setItem('chunk', `${chunk}`);
-        prevPage.querySelector('span.prev-page').textContent = `${chunk}`;
+        prevPage.querySelector('.controls__prev-control-content').textContent = `${chunk}`;
         currPage.textContent = `${chunk + 1}`;
-        nextPage.querySelector('span.next-page').textContent = `${chunk + 2}`;
+        nextPage.querySelector('.controls__next-control-content').textContent = `${chunk + 2}`;
         sessionStorage.setItem('leftItem', `${chunk * items}`);
         if (chunk === 0) {
-          prevPage.classList.add('disabled');
+          prevPage.classList.add('controls__button_state_disabled');
         }
       }
       root.style.removeProperty('--diff');
@@ -81,9 +81,9 @@ const sliderListener = (slider) => {
         root.style.setProperty('--chunk', `${currChunk}`);
         sessionStorage.setItem('chunk', `${currChunk}`);
         sessionStorage.setItem('items', `${currItems}`);
-        prevPage.querySelector('span.prev-page').textContent = `${currChunk}`;
+        prevPage.querySelector('.controls__prev-control-content').textContent = `${currChunk}`;
         currPage.textContent = `${currChunk + 1}`;
-        nextPage.querySelector('span.next-page').textContent = `${currChunk + 2}`;
+        nextPage.querySelector('.controls__next-control-content').textContent = `${currChunk + 2}`;
       }
     };
 

@@ -1,26 +1,26 @@
 export default `
-<div class="youtube-img-wrapper">
-  <img class="youtube-img" src="" alt="Youtube preview image">
+<div class="image-block">
+  <img class="image-block__image" src="" alt="Youtube preview image">
 </div>
 <div class="container-content">
-  <header class="container-header">
-    <h2 class="container-header-title">
-      <a class="container-header-title-link" href=""></a>
+  <header class="container-content__header">
+    <h2 class="container-content__title">
+      <a class="container-content__title-link" href=""></a>
     </h2>
-    <span class="container-header-channel"></span>
+    <span class="container-content__channel"></span>
   </header>
-  <section class="container-description">
+  <section class="container-content__description">
     <p></p>
   </section>
-  <footer class="container-footer">
-    <div class="container-footer-wrapper">
-      <div class="container-footer-reg">
+  <footer class="container-content__footer-section">
+    <div class="container-content__footer">
+      <div class="container-content__published">
         <i class="far fa-calendar-alt"></i>
-        <span class="container-footer-date"></span>
+        <span class="container-content__date"></span>
       </div>
-      <div class="container-footer-view-sec">
+      <div>
         <i class="far fa-eye"></i>
-        <span class="container-footer-views"></span>
+        <span class="container-content__views"></span>
       </div>
     </div>
    </footer>

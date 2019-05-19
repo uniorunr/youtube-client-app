@@ -1,4 +1,4 @@
-.button {
+.controls__button {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -18,7 +18,7 @@
   -webkit-box-shadow: 2px 2px 0 $theme-shadow-color;
 }
 
-.button.tooltip:after {
+.controls__button.controls__button_state_tooltip:after {
   content: attr(data-page);
   padding: 5px 10px;
   position: absolute;
@@ -27,34 +27,28 @@
   border: 2px solid $theme-shadow-color;
 }
 
-.prev-page-button {
+.controls__button_prev {
   flex-grow: 1;
   margin-right: 25px;
 }
 
-.prev-page-button:active {
+.controls__button_prev:active {
   top: 2px;
   box-shadow: 0 0 0 $theme-shadow-color;
   -webkit-box-shadow: 0 0 0 $theme-shadow-color;
 }
 
-.prev-page-button.disabled {
+.controls__button_prev.controls__button_state_disabled {
   visibility: hidden;
 }
 
-.next-page-button {
+.controls__button_next {
   flex-grow: 1;
   margin-left: 25px;
 }
 
-.next-page-button:active {
+.controls__button_next:active {
   top: 2px;
-  box-shadow: 0 0 0 $theme-shadow-color;
-  -webkit-box-shadow: 0 0 0 $theme-shadow-color;
-}
-
-.active-button {
-  top: 0;
   box-shadow: 0 0 0 $theme-shadow-color;
   -webkit-box-shadow: 0 0 0 $theme-shadow-color;
 }

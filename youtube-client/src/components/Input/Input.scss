@@ -1,10 +1,10 @@
-.input-wrapper {
+.input-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
 
-  .search-input {
+  .input-section__input {
     position: relative;
     top: 2px;
     transition: top 0.1s, box-shadow 0.1s;
@@ -20,33 +20,37 @@
     -webkit-box-shadow: 2px 2px 0 $theme-shadow-color;
   }
 
-  .search-input:hover {
+  .input-section__input:hover {
     top: 0;
     box-shadow: 4px 4px 0 $theme-shadow-color;
     -webkit-box-shadow: 4px 4px 0 $theme-shadow-color;
   }
 
-  .search-input::placeholder {
+  .input-section__input::placeholder {
     font: 500 14px 'Roboto', sans-serif;
     color: $theme-font-color;
   }
 }
 
 @media only screen and (max-width : 480px) {
-  .input-wrapper .search-input {
-    margin: 20px 0 0;
-    padding: 8px 20px;
-  }
+  .input-section {
+    .input-section__input {
+      margin: 20px 0 0;
+      padding: 8px 20px;
+    }
 
-  .input-wrapper .search-input::placeholder {
-    font-size: 1.2rem;
+    .input-section__input::placeholder {
+      font-size: 1.2rem;
+    }
   }
 }
 
 @media only screen and (max-width : 824px) and (orientation: landscape) {
-  .input-wrapper .search-input {
-    margin: 10px 0 0;
-    padding: 5px 15px;
+  .input-section {
+    .input-section__input {
+      margin: 10px 0 0;
+      padding: 5px 15px;
+    }
   }
 }
 
@@ -55,12 +59,14 @@ and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: landscape) {
-  .input-wrapper .search-input {
-    font-size: 1.2rem;
-  }
+  .input-section {
+    .input-section__input {
+      font-size: 1.2rem;
+    }
 
-  .input-wrapper .search-input::placeholder {
-    font-size: 1.2rem;
+    .input-section__input::placeholder {
+      font-size: 1.2rem;
+    }
   }
 }
 
