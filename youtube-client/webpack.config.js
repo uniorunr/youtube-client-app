@@ -36,6 +36,7 @@ module.exports = {
   plugins: [
     new HtmlPlugin({
       template: path.join(__dirname, '/src/index.html'),
+      favicon: path.join(__dirname, '/src/favicon.png'),
     }),
   ],
   watch: true,
