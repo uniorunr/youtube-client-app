@@ -12,7 +12,6 @@ const sliderListener = (slider) => {
 
     const activate = ({ pageX, changedTouches }) => {
       isDown = true;
-      slider.classList.add('active');
       if (pageX) {
         startX = pageX - slider.offsetLeft;
       } else {
@@ -22,7 +21,6 @@ const sliderListener = (slider) => {
 
     const leave = () => {
       isDown = false;
-      slider.classList.remove('active');
       root.style.removeProperty('--diff');
     };
 
@@ -30,7 +28,6 @@ const sliderListener = (slider) => {
       let chunk = +sessionStorage.getItem('chunk');
       const items = +sessionStorage.getItem('items');
       isDown = false;
-      slider.classList.remove('active');
       if (diff > 30) {
         chunk += 1;
         root.style.setProperty('--chunk', `${chunk}`);
